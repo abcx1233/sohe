@@ -138,8 +138,8 @@
         }
         var centerX = rect.left + rect.width / 2;
         var centerY = rect.top + rect.height / 2;
-        var offsetX = (e.clientX - centerX) * 0.35;
-        var offsetY = (e.clientY - centerY) * 0.35;
+        var offsetX = (e.clientX - centerX) * 0.2;
+        var offsetY = (e.clientY - centerY) * 0.2;
         tag.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px)';
       });
 
