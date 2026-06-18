@@ -121,7 +121,7 @@
   }
 
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var magneticEls = document.querySelectorAll('.cloud-tag, .pill');
+  var magneticEls = document.querySelectorAll('.service-tags li');
 
   if (!prefersReducedMotion && magneticEls.length) {
     magneticEls.forEach(function (tag) {
