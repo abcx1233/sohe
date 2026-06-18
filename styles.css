@@ -1290,7 +1290,7 @@ button {
   transform: scale(1.1);
 }
 
-.cloud-tag-magnetic-reset {
+.magnetic-reset {
   transition: transform 0.4s cubic-bezier(0.22, 0.68, 0, 1.5);
 }
 

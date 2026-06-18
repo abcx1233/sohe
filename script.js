@@ -121,14 +121,14 @@
   }
 
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var magneticTags = document.querySelectorAll('.cloud-tag');
+  var magneticEls = document.querySelectorAll('.cloud-tag, .pill');
 
-  if (!prefersReducedMotion && magneticTags.length) {
-    magneticTags.forEach(function (tag) {
+  if (!prefersReducedMotion && magneticEls.length) {
+    magneticEls.forEach(function (tag) {
       var rect = null;
 
       tag.addEventListener('mouseenter', function () {
-        tag.classList.remove('cloud-tag-magnetic-reset');
+        tag.classList.remove('magnetic-reset');
         rect = tag.getBoundingClientRect();
       });
 
@@ -144,7 +144,7 @@
       });
 
       tag.addEventListener('mouseleave', function () {
-        tag.classList.add('cloud-tag-magnetic-reset');
+        tag.classList.add('magnetic-reset');
         tag.style.transform = 'translate(0px, 0px)';
         rect = null;
       });
