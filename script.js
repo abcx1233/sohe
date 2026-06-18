@@ -119,4 +119,35 @@
         });
     });
   }
+
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var magneticTags = document.querySelectorAll('.cloud-tag');
+
+  if (!prefersReducedMotion && magneticTags.length) {
+    magneticTags.forEach(function (tag) {
+      var rect = null;
+
+      tag.addEventListener('mouseenter', function () {
+        tag.classList.remove('cloud-tag-magnetic-reset');
+        rect = tag.getBoundingClientRect();
+      });
+
+      tag.addEventListener('mousemove', function (e) {
+        if (!rect) {
+          rect = tag.getBoundingClientRect();
+        }
+        var centerX = rect.left + rect.width / 2;
+        var centerY = rect.top + rect.height / 2;
+        var offsetX = (e.clientX - centerX) * 0.35;
+        var offsetY = (e.clientY - centerY) * 0.35;
+        tag.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px)';
+      });
+
+      tag.addEventListener('mouseleave', function () {
+        tag.classList.add('cloud-tag-magnetic-reset');
+        tag.style.transform = 'translate(0px, 0px)';
+        rect = null;
+      });
+    });
+  }
 })();
