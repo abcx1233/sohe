@@ -16,7 +16,7 @@
   --color-black: #0c1016;
   --color-dark-grey: #1e232c;
   --color-soft-grey: #d9e0e3;
-  --color-grey: #a5abad;
+  --color-grey: #767c7e;
 
   /* type */
   --font-body: "Inter", system-ui, sans-serif;
@@ -57,6 +57,37 @@ button {
   font: inherit;
   border: none;
   cursor: pointer;
+}
+
+/* ---------------------------------------------------
+   Skip link
+--------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 /* ---------------------------------------------------
@@ -333,12 +364,24 @@ button {
    Work list
 --------------------------------------------------- */
 
-@keyframes highlight-sweep {
-  0% {
-    background-position: 0 0;
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes highlight-sweep {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
   }
-  100% {
-    background-position: -200% 0;
+
+  .highlight-word {
+    animation: highlight-sweep 5s infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight-word {
+    animation: none;
   }
 }
 
@@ -378,7 +421,6 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: highlight-sweep 5s infinite;
 }
 
 .work-grid {
@@ -654,16 +696,6 @@ button {
 /* ---------------------------------------------------
    Closing CTA
 --------------------------------------------------- */
-
-@keyframes drift {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3%);
-  }
-}
 
 .cta {
   position: relative;
@@ -1151,10 +1183,7 @@ button {
 }
 
 .view-toggle {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  display: none;
 }
 
 .view-toggle-btn {
@@ -1185,6 +1214,8 @@ button {
   }
 
   .view-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 4rem;
     gap: 3rem;
   }
@@ -1257,5 +1288,29 @@ button {
 .cloud-tag:hover,
 .cloud-tag:focus-visible {
   transform: scale(1.1);
+}
+
+.cloud-tag-websites {
+  background-color: #ff449e;
+}
+
+.cloud-tag-branding {
+  background-color: #38ff94;
+}
+
+.cloud-tag-product-design {
+  background-color: #ffdf38;
+}
+
+.cloud-tag-content {
+  background-color: #ff862f;
+}
+
+.cloud-tag-strategy {
+  background-color: #38dbff;
+}
+
+.cloud-tag-growth {
+  background-color: #fc7cff;
 }
 

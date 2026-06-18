@@ -6,12 +6,14 @@
     var openMenu = function () {
       menuBtn.setAttribute('aria-expanded', 'true');
       menu.setAttribute('aria-hidden', 'false');
+      menu.removeAttribute('inert');
       menu.classList.add('is-open');
     };
 
     var closeMenu = function () {
       menuBtn.setAttribute('aria-expanded', 'false');
       menu.setAttribute('aria-hidden', 'true');
+      menu.setAttribute('inert', '');
       menu.classList.remove('is-open');
     };
 
@@ -47,8 +49,10 @@
       btn.addEventListener('click', function () {
         viewToggleBtns.forEach(function (b) {
           b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
         });
         btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
         workGrid.classList.toggle('is-list-view', btn.dataset.view === 'list');
       });
     });
@@ -60,6 +64,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
+
+  var bookMeetingBtn = document.getElementById('book-meeting-btn');
+  var ctaSection = document.querySelector('.cta');
+  if (bookMeetingBtn && ctaSection) {
+    bookMeetingBtn.addEventListener('click', function () {
+      ctaSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 
   var startProjectBtn = document.getElementById('start-project-btn');
   var startProjectForm = document.getElementById('start-project-form');
