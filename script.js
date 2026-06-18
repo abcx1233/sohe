@@ -1,0 +1,110 @@
+(function () {
+  var menuBtn = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('site-menu');
+
+  if (menuBtn && menu) {
+    var openMenu = function () {
+      menuBtn.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-hidden', 'false');
+      menu.classList.add('is-open');
+    };
+
+    var closeMenu = function () {
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('is-open');
+    };
+
+    menuBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      var isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  }
+
+  var viewToggleBtns = document.querySelectorAll('.view-toggle-btn');
+  var workGrid = document.querySelector('.work-grid');
+
+  if (viewToggleBtns.length && workGrid) {
+    viewToggleBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        viewToggleBtns.forEach(function (b) {
+          b.classList.remove('is-active');
+        });
+        btn.classList.add('is-active');
+        workGrid.classList.toggle('is-list-view', btn.dataset.view === 'list');
+      });
+    });
+  }
+
+  var goUpBtns = document.querySelectorAll('.footer-go-up');
+  goUpBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  var startProjectBtn = document.getElementById('start-project-btn');
+  var startProjectForm = document.getElementById('start-project-form');
+  if (startProjectBtn && startProjectForm) {
+    startProjectBtn.addEventListener('click', function () {
+      startProjectForm.classList.add('is-visible');
+      startProjectForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var firstField = startProjectForm.querySelector('input[name="name"]');
+      if (firstField) {
+        firstField.focus();
+      }
+    });
+
+    startProjectForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var submitBtn = startProjectForm.querySelector('button[type="submit"]');
+      var errorMsg = startProjectForm.querySelector('.form-error');
+      var originalLabel = submitBtn.textContent;
+
+      errorMsg.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      fetch(startProjectForm.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(startProjectForm),
+      })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          if (data.success) {
+            startProjectForm.innerHTML = '<p class="form-success-message">Thanks — I\'ll get back to you shortly.</p>';
+          } else {
+            throw new Error(data.message || 'Submission failed');
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+          errorMsg.textContent = 'Something went wrong — please try again.';
+          errorMsg.hidden = false;
+        });
+    });
+  }
+})();
