@@ -644,6 +644,25 @@ button {
   display: none;
 }
 
+.service-card-cog {
+  transform-origin: center;
+}
+
+.service-card:hover .service-card-cog {
+  animation: spin 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 .service-description p {
   margin: 0;
   font-size: 1.25rem;
