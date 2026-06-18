@@ -621,6 +621,8 @@ button {
   font-size: 0.875rem;
   padding: 0.5rem 1rem;
   border-radius: 999px;
+  user-select: none;
+  cursor: default;
 }
 
 @media (prefers-reduced-motion: reduce) {
