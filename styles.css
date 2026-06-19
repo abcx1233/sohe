@@ -60,6 +60,27 @@ button {
 }
 
 /* ---------------------------------------------------
+   Scroll reveal
+--------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------
    Skip link
 --------------------------------------------------- */
 
@@ -371,10 +392,13 @@ button {
 @media (prefers-reduced-motion: no-preference) {
   @keyframes highlight-sweep {
     0% {
-      background-position: 0 0;
+      background-position: 10% 0;
+    }
+    50% {
+      background-position: 91% 100%;
     }
     100% {
-      background-position: -200% 0;
+      background-position: 10% 0;
     }
   }
 
@@ -947,6 +971,30 @@ button {
 
 .footer-go-up {
   display: none;
+}
+
+.footer-go-up .pill-icon {
+  overflow: hidden;
+}
+
+.footer-go-up .pill-icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s cubic-bezier(0.22, 0.68, 0, 1.5);
+}
+
+.footer-go-up .pill-icon svg.icon-swap-in {
+  transform: translate(-50%, -50%) translateX(-250%);
+}
+
+.footer-go-up:hover .pill-icon svg.icon-swap-out {
+  transform: translate(-50%, -50%) translateX(250%) rotate(90deg);
+}
+
+.footer-go-up:hover .pill-icon svg.icon-swap-in {
+  transform: translate(-50%, -50%) translateX(0);
 }
 
 @media (min-width: 640px) {
