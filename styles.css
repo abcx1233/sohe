@@ -12,9 +12,9 @@
 
 :root {
   --wordmark-offset: calc(77vw - (90vw * 5812 / 6434));
-  --work-wordmark-offset: calc(77vw - (90vw * 4874 / 5422));
+  --work-wordmark-offset: calc(77vw - (90vw * 8161 / 8783));
   --studio-wordmark-offset: calc(77vw - (90vw * 5999 / 6621));
-  --contact-wordmark-offset: calc(77vw - (90vw * 7666 / 8104));
+  --contact-wordmark-offset: calc(77vw - (90vw * 4448 / 5070));
 
   /* colors */
   --color-white: #f0f6f8;
