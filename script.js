@@ -180,4 +180,23 @@
       });
     }
   }
+
+  var scrollIndicators = document.querySelectorAll('.scroll-indicator');
+
+  if (scrollIndicators.length) {
+    var updateScrollIndicators = function () {
+      var hidden = window.scrollY > 50;
+      scrollIndicators.forEach(function (el) {
+        el.classList.toggle('scroll-indicator--hidden', hidden);
+      });
+    };
+
+    if (prefersReducedMotion) {
+      scrollIndicators.forEach(function (el) {
+        el.style.transition = 'none';
+      });
+    }
+
+    window.addEventListener('scroll', updateScrollIndicators);
+  }
 })();
