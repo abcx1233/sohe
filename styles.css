@@ -12,6 +12,8 @@
 
 :root {
   --wordmark-offset: calc(77vw - (90vw * 5812 / 6434));
+  --studio-wordmark-offset: calc(79vw - (90vw * 5999 / 6621));
+  --contact-wordmark-offset: calc(86vw - (90vw * 7666 / 8104));
 
   /* colors */
   --color-white: #f0f6f8;
@@ -1345,6 +1347,12 @@ button {
 .studio-hero-tagline {
   font-size: 1.25rem;
   letter-spacing: -0.075em;
+}
+
+@media (min-width: 1024px) {
+  .studio-hero-tagline {
+    font-size: 3.5rem;
+  }
 }
 
 .studio-team,
