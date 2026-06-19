@@ -11,6 +11,8 @@
 }
 
 :root {
+  --wordmark-offset: calc(77vw - (90vw * 5812 / 6434));
+
   /* colors */
   --color-white: #f0f6f8;
   --color-black: #0c1016;
