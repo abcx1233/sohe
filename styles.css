@@ -1268,6 +1268,10 @@ button {
   right: -8%;
 }
 
+.work-hero-wordmark {
+  --work-wordmark-offset: calc(82vw - (90vw * 4874 / 5422));
+}
+
 .work-hero-tagline {
   letter-spacing: -0.075em;
 }
@@ -1301,6 +1305,10 @@ button {
 @media (min-width: 1024px) {
   .work-hero-copy {
     right: 5%;
+  }
+
+  .work-hero-wordmark {
+    --work-wordmark-offset: calc(95vw - (90vw * 4874 / 5422));
   }
 
   .view-toggle {
