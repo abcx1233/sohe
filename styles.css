@@ -256,23 +256,52 @@ button {
 }
 
 .site-menu-link {
-  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem 1.5rem;
   border-radius: 1rem;
-  font-size: 1.125rem;
+  font-size: 1.875rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.075em;
   color: var(--color-black);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease-out;
 }
 
 .site-menu-link:hover {
   background: var(--color-white);
 }
 
+.site-menu-link-icon {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .site-menu {
     top: 7rem;
     right: 3rem;
+  }
+
+  .site-menu-link {
+    padding: 1rem 1.5rem;
+    font-size: 3rem;
+  }
+
+  .site-menu-link-icon {
+    display: block;
+    width: 0;
+    overflow: hidden;
+    color: var(--color-black);
+    transition: width 0.3s ease-out;
+  }
+
+  .site-menu-link-icon svg {
+    display: block;
+    width: 1.75rem;
+  }
+
+  .site-menu-link:hover .site-menu-link-icon {
+    width: 1.75rem;
   }
 }
 
