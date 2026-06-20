@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-20T21:51:07Z",
+  "title": "Design System: Omiko",
+  "extensions": {
+    "colorMeta": {
+      "paper-white": { "role": "primary", "displayName": "Paper White", "canonical": "#f0f6f8", "tonalRamp": ["#0c1016", "#1e232c", "#363a40", "#50555a", "#767c7e", "#d9e0e3", "#e8eef0", "#f0f6f8"] },
+      "ink-black": { "role": "primary", "displayName": "Ink Black", "canonical": "#0c1016", "tonalRamp": ["#0c1016", "#1e232c", "#363a40", "#50555a", "#767c7e", "#d9e0e3", "#e8eef0", "#f0f6f8"] },
+      "panel-dark-grey": { "role": "neutral", "displayName": "Panel Dark Grey", "canonical": "#1e232c" },
+      "surface-soft-grey": { "role": "neutral", "displayName": "Surface Soft Grey", "canonical": "#d9e0e3" },
+      "label-grey": { "role": "neutral", "displayName": "Label Grey", "canonical": "#767c7e" },
+      "label-grey-on-light": { "role": "neutral", "displayName": "Label Grey On Light", "canonical": "#6b7072" },
+      "panel-sublabel": { "role": "neutral", "displayName": "Panel Sublabel", "canonical": "#c8c8c8" },
+      "panel-step-1": { "role": "neutral", "displayName": "Panel Step 1", "canonical": "#23272d" },
+      "panel-step-2": { "role": "neutral", "displayName": "Panel Step 2", "canonical": "#3a3e44" },
+      "panel-step-3": { "role": "neutral", "displayName": "Panel Step 3", "canonical": "#50555a" },
+      "tag-step-1": { "role": "neutral", "displayName": "Tag Step 1", "canonical": "#10141c" },
+      "tag-step-2": { "role": "neutral", "displayName": "Tag Step 2", "canonical": "#20242a" },
+      "tag-step-3": { "role": "neutral", "displayName": "Tag Step 3", "canonical": "#363a40" },
+      "tag-step-4": { "role": "neutral", "displayName": "Tag Step 4", "canonical": "#4c5157" },
+      "error-red": { "role": "error", "displayName": "Error Red", "canonical": "#b3261e" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Closing CTA heading and footer wordmark only, once per page." },
+      "headline": { "displayName": "Headline", "purpose": "Section headlines and hero taglines." },
+      "title": { "displayName": "Title", "purpose": "Service and pricing card titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy inside service descriptions and legal pages." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, pill labels, form field labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-soft-overshoot", "value": "cubic-bezier(0.22, 0.68, 0, 1)", "purpose": "Default hover/interaction easing for pills, tags, and panel transitions." },
+      { "name": "ease-overshoot-spring", "value": "cubic-bezier(0.22, 0.68, 0, 1.5)", "purpose": "Card and button hover scale where a touch of overshoot reads as tactile (work cards, contact button, magnetic tags)." },
+      { "name": "ease-reveal", "value": "ease-out", "purpose": "Scroll-reveal opacity/translateY transitions, 0.6s." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "xxl", "value": "1900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill Button (dark)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Dark pill CTA with an embedded icon well, e.g. the menu toggle and main contact CTA.",
+      "html": "<button class=\"ds-pill ds-pill-dark\" type=\"button\"><span class=\"ds-pill-label\">Chat with Omiko</span><span class=\"ds-pill-icon\"><svg viewBox=\"0 0 18 17\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\"><path d=\"M1 3.26215C1 2.33911 1.79594 1.59084 2.77778 1.59084L15.2222 1.59082C16.2041 1.59082 17 2.33909 17 3.26213V11.6485C17 12.5716 16.2041 13.3198 15.2222 13.3199L11.9989 13.3199C11.7918 13.3199 11.5912 13.3878 11.4318 13.512L8.9962 15.409L6.59291 13.5151C6.43287 13.389 6.23071 13.3199 6.02188 13.3199H2.77778C1.79594 13.3199 1 12.5716 1 11.6486L1 3.26215Z\" stroke=\"currentColor\" stroke-width=\"1.77778\" stroke-linejoin=\"round\"/></svg></span></button>",
+      "css": ".ds-pill { display: flex; align-items: center; padding: 0.3rem; border-radius: 999px; transition: transform 0.5s cubic-bezier(0.22, 0.68, 0, 1); } .ds-pill:hover, .ds-pill:focus-visible { transform: scale(1.1); } .ds-pill-dark { background: #0c1016; } .ds-pill-label { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; padding: 0 1rem 0 1.75rem; color: #f0f6f8; } .ds-pill-icon { display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 999px; background: #1e232c; color: #f0f6f8; } .ds-pill-icon svg { width: 40%; }"
+    },
+    {
+      "name": "Light Pill Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Soft-grey pill used on dark contexts as the secondary action.",
+      "html": "<button class=\"ds-pill ds-pill-light\" type=\"button\"><span class=\"ds-pill-label\">Chat with Omiko</span><span class=\"ds-pill-icon\"><svg viewBox=\"0 0 18 17\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\"><path d=\"M1 3.26215C1 2.33911 1.79594 1.59084 2.77778 1.59084L15.2222 1.59082C16.2041 1.59082 17 2.33909 17 3.26213V11.6485C17 12.5716 16.2041 13.3198 15.2222 13.3199L11.9989 13.3199C11.7918 13.3199 11.5912 13.3878 11.4318 13.512L8.9962 15.409L6.59291 13.5151C6.43287 13.389 6.23071 13.3199 6.02188 13.3199H2.77778C1.79594 13.3199 1 12.5716 1 11.6486L1 3.26215Z\" stroke=\"currentColor\" stroke-width=\"1.77778\" stroke-linejoin=\"round\"/></svg></span></button>",
+      "css": ".ds-pill { display: flex; align-items: center; padding: 0.3rem; border-radius: 999px; transition: transform 0.5s cubic-bezier(0.22, 0.68, 0, 1); } .ds-pill:hover, .ds-pill:focus-visible { transform: scale(1.1); } .ds-pill-light { background: #d9e0e3; } .ds-pill-label { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; padding: 0 1rem 0 1.75rem; color: #000000; } .ds-pill-icon { display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 999px; background: #f0f6f8; color: #000000; } .ds-pill-icon svg { width: 40%; }"
+    },
+    {
+      "name": "Stepped Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Service/pricing card whose background is one step of the grey ramp, with a matching darker chip set inside.",
+      "html": "<article class=\"ds-card\" style=\"background-color:#23272d\"><h3 class=\"ds-card-title\"><span class=\"ds-card-title-main\">UI/UX</span><span class=\"ds-card-title-sub\">Design</span></h3><ul class=\"ds-card-tags\"><li style=\"background-color:#20242a\">UI/UX Design</li><li style=\"background-color:#20242a\">Design Systems</li></ul></article>",
+      "css": ".ds-card { border-radius: 2rem; padding: 3rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 4rem; } .ds-card-title { margin: 0; display: flex; flex-direction: column; font-size: 3rem; line-height: 1; letter-spacing: -0.05em; } .ds-card-title-main { color: #f0f6f8; } .ds-card-title-sub { color: #767c7e; } .ds-card-tags { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; } .ds-card-tags li { color: #f0f6f8; font-size: 0.875rem; padding: 0.5rem 1rem; border-radius: 999px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Form field used on the contact page's start-project form.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-name\">Name</label><input class=\"ds-field-input\" id=\"ds-name\" type=\"text\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.5rem; text-align: left; } .ds-field-label { font-size: 0.875rem; font-weight: 600; color: #0c1016; } .ds-field-input { padding: 0.75rem 1rem; border-radius: 0.75rem; border: none; background: #f0f6f8; color: #0c1016; font: inherit; } .ds-field-input:focus-visible { outline: 2px solid #0c1016; outline-offset: 2px; }"
+    },
+    {
+      "name": "Off-canvas Nav Menu",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Soft-grey rounded panel of stacked pill nav links, opened from the header menu toggle.",
+      "html": "<nav class=\"ds-menu\"><a class=\"ds-menu-link\" href=\"#\">Home</a><a class=\"ds-menu-link\" href=\"#\">Studio</a><a class=\"ds-menu-link\" href=\"#\">Work</a><a class=\"ds-menu-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-menu { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; min-width: 12rem; border-radius: 1.5rem; background: #d9e0e3; } .ds-menu-link { display: flex; align-items: center; gap: 1rem; padding: 0.25rem 1.5rem; border-radius: 1rem; font-size: 1.875rem; font-weight: 600; letter-spacing: -0.075em; color: #0c1016; transition: background-color 0.2s ease-out; } .ds-menu-link:hover, .ds-menu-link:focus-visible { background: #f0f6f8; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Confidence",
+    "overview": "Omiko's visitors are local service-business owners, on their phone, comparing this agency against several others in open tabs. They are not impressed by noise — they are impressed by a site that visibly has its act together. The system is built on a strict near-monochrome palette (off-white paper, near-black ink, a tight band of greys) that refuses to reach for color as a crutch. Confidence is expressed through precision: tight negative letter-spacing on display type, exact optical alignment of the wordmark, deliberate scroll-reveal choreography, and tonal stepping in place of drop shadows. Nothing here is decorative; everything that appears is load-bearing. This system explicitly rejects the generic template-agency look: stock photography, interchangeable icon-grid service cards, and vague \"we build beautiful websites\" filler copy. Every section instead leads with a direct, specific claim (\"Simple packages. No surprises.\", \"Ideas, given real shape.\") and lets restrained type and motion carry the credibility.",
+    "keyCharacteristics": [
+      "Two-color spine (paper-white / ink-black) with a narrow grey ramp; color is the exception, not the rule.",
+      "Display type is heavy weight (900) with aggressively negative letter-spacing (-0.05em to -0.075em) — confident, not loud.",
+      "Depth comes from flat tonal stepping between panels, never from box-shadow.",
+      "Pill shapes (999px radius) for every interactive control — buttons, nav, tags, social icons — used consistently as the one shape language.",
+      "Motion is subtle and physical: scroll-reveals, magnetic hover scales, never bounce or elastic."
+    ],
+    "rules": [
+      { "name": "The Two-Tone Spine Rule", "body": "Every screen is built from paper-white and ink-black first; greys exist only to step between them. If a new component needs a third hue, that's a sign it belongs in the services-cloud exception, not the core system.", "section": "colors" },
+      { "name": "Resolved: the former services-cloud exception", "body": "The studio page's services-cloud tags previously broke the two-tone spine with six saturated colors. All six now share a single neutral background (Panel Step 1, #23272d) with paper-white text, differentiated only by label. No remaining color exception.", "section": "colors" },
+      { "name": "The Negative Tracking Rule", "body": "Anything above body size pulls letter-spacing tight (-0.02em at minimum, -0.075em at the tightest on headlines) — never set wide or default tracking on a heading. Stay above the -0.04em ceiling so letters never visually touch.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces never cast a shadow. If a new component needs to read as 'above' another, step it to a lighter or darker tone in the existing grey ramp instead of reaching for box-shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the palette to paper-white, ink-black, and the grey ramp; let restraint and precision (tracking, spacing, motion timing) carry differentiation instead of color.",
+      "Do use pill shape (999px) for every new interactive control to stay consistent with the existing button/chip/nav language.",
+      "Do convey card hierarchy through tonal stepping in the existing grey ramp, not through box-shadow.",
+      "Do keep headline tracking tight (-0.02em to -0.075em) and never let a display heading exceed the 12rem ceiling at the largest breakpoint.",
+      "Do write short, direct, jargon-free copy — the existing voice (\"Simple packages. No surprises.\") is the bar for every new section.",
+      "Do design mobile-first and verify on a phone viewport before checking desktop, since the primary visitor is comparing agencies on their phone."
+    ],
+    "donts": [
+      "Don't introduce stock photography, generic icon-grid service cards, or vague \"we build beautiful websites\" copy.",
+      "Don't add box-shadows for depth; this system is flat-by-default and conveys depth through tone alone.",
+      "Don't extend the services-cloud's saturated six-color tag palette to any new component.",
+      "Don't use border-left or border-right colored stripes as accents anywhere in this system.",
+      "Don't apply gradient text for general emphasis; the one existing use is a narrow, intentional animated sweep on a single word per section.",
+      "Don't use bounce or elastic easing; motion stays in the ease-out-quart/quint family already established."
+    ]
+  }
+}

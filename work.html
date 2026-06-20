@@ -86,7 +86,7 @@
 <main id="main-content">
   <section class="work-hero">
     <div class="hero-copy work-hero-copy">
-      <span class="hero-wordmark-svg work-hero-wordmark" style="transform: translateX(var(--work-wordmark-offset))">
+      <span class="hero-wordmark-svg work-hero-wordmark" style="transform: translateX(var(--work-wordmark-offset))" aria-hidden="true">
         <svg viewBox="0 -1984 8783 2478" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M80 0V-1490H713Q891 -1490 1021 -1426.5Q1151 -1363 1221.5 -1246.5Q1292 -1130 1292 -970Q1292 -811 1221.5 -694Q1151 -577 1021 -513.5Q891 -450 713 -450H496V0ZM496 -792H682Q776 -792 831 -840Q886 -888 886 -970Q886 -1052 831 -1100Q776 -1148 682 -1148H496Z M1949 24Q1778 24 1648 -43.5Q1518 -111 1445.5 -235Q1373 -359 1373 -528Q1373 -697 1445.5 -820.5Q1518 -944 1648 -1012Q1778 -1080 1949 -1080Q2121 -1080 2250.5 -1012Q2380 -944 2452.5 -820.5Q2525 -697 2525 -528Q2525 -359 2452.5 -235Q2380 -111 2250.5 -43.5Q2121 24 1949 24ZM1949 -288Q2020 -288 2070.5 -348.5Q2121 -409 2121 -528Q2121 -647 2070.5 -707.5Q2020 -768 1949 -768Q1878 -768 1827.5 -707.5Q1777 -647 1777 -528Q1777 -409 1827.5 -348.5Q1878 -288 1949 -288Z M2657 0V-1056H3045V-864H3047Q3076 -971 3137 -1013.5Q3198 -1056 3307 -1056H3407V-736H3261Q3167 -736 3112 -674Q3057 -612 3057 -506V0Z M4239 -1056V-752H4021V-386Q4021 -339 4039.5 -321.5Q4058 -304 4113 -304H4239V0H4019Q3811 0 3716 -75.5Q3621 -151 3621 -316V-752H3443V-1056H3621V-1344H4021V-1056Z M5111 -1056V-752H4893V0H4493V-752H4299V-1056H4493V-1150Q4493 -1327 4588.5 -1408.5Q4684 -1490 4891 -1490H5111V-1186H5001Q4942 -1186 4917.5 -1162Q4893 -1138 4893 -1080V-1056Z M5773 24Q5602 24 5472 -43.5Q5342 -111 5269.5 -235Q5197 -359 5197 -528Q5197 -697 5269.5 -820.5Q5342 -944 5472 -1012Q5602 -1080 5773 -1080Q5945 -1080 6074.5 -1012Q6204 -944 6276.5 -820.5Q6349 -697 6349 -528Q6349 -359 6276.5 -235Q6204 -111 6074.5 -43.5Q5945 24 5773 24ZM5773 -288Q5844 -288 5894.5 -348.5Q5945 -409 5945 -528Q5945 -647 5894.5 -707.5Q5844 -768 5773 -768Q5702 -768 5651.5 -707.5Q5601 -647 5601 -528Q5601 -409 5651.5 -348.5Q5702 -288 5773 -288Z M6881 -1490V0H6481V-1490Z M7053 0V-1056H7453V0ZM7252 -1126Q7158 -1126 7098.5 -1180Q7039 -1234 7039 -1319Q7039 -1403 7098.5 -1456.5Q7158 -1510 7252 -1510Q7346 -1510 7405.5 -1456.5Q7465 -1403 7465 -1319Q7465 -1234 7405.5 -1180Q7346 -1126 7252 -1126Z M8161 24Q7990 24 7860 -43.5Q7730 -111 7657.5 -235Q7585 -359 7585 -528Q7585 -697 7657.5 -820.5Q7730 -944 7860 -1012Q7990 -1080 8161 -1080Q8333 -1080 8462.5 -1012Q8592 -944 8664.5 -820.5Q8737 -697 8737 -528Q8737 -359 8664.5 -235Q8592 -111 8462.5 -43.5Q8333 24 8161 24ZM8161 -288Q8232 -288 8282.5 -348.5Q8333 -409 8333 -528Q8333 -647 8282.5 -707.5Q8232 -768 8161 -768Q8090 -768 8039.5 -707.5Q7989 -647 7989 -528Q7989 -409 8039.5 -348.5Q8090 -288 8161 -288Z"/>
         </svg>
@@ -128,9 +128,8 @@
     </div>
 
     <div class="work-grid">
-      <!-- TODO: restore as <a href="work/1up-nova.html"> once the case study page exists -->
-      <div class="work-card" data-reveal>
-        <img src="images/work-1up-nova.png" alt="1UP Nova project by Omiko" />
+      <a class="work-card" href="work/1up-nova.html" data-reveal>
+        <img src="images/work-1up-nova.png" alt="Voxel-style illustrated cityscape for 1UP Nova's gaming community platform" />
         <div class="work-card-scrim"></div>
         <div class="work-card-title">
           <span class="work-card-arrow">
@@ -140,11 +139,10 @@
           </span>
           <h3>1UP Nova</h3>
         </div>
-      </div>
+      </a>
 
-      <!-- TODO: restore as <a href="work/razer.html"> once the case study page exists -->
-      <div class="work-card" data-reveal>
-        <img src="images/work-razer.png" alt="Razer project by Omiko" />
+      <a class="work-card" href="work/razer.html" data-reveal>
+        <img src="images/work-razer.png" alt="Neon-lit gaming lounge screens, part of Razer's brand identity" />
         <div class="work-card-scrim"></div>
         <div class="work-card-title">
           <span class="work-card-arrow">
@@ -154,11 +152,10 @@
           </span>
           <h3>Razer</h3>
         </div>
-      </div>
+      </a>
 
-      <!-- TODO: restore as <a href="work/themis.html"> once the case study page exists -->
-      <div class="work-card" data-reveal>
-        <img src="images/work-themis.png" alt="Themis project by Omiko" />
+      <a class="work-card" href="work/themis.html" data-reveal>
+        <img src="images/work-themis.png" alt="Classical building facade with leadership banners for Themis's rebrand" />
         <div class="work-card-scrim"></div>
         <div class="work-card-title">
           <span class="work-card-arrow">
@@ -168,11 +165,10 @@
           </span>
           <h3>Themis</h3>
         </div>
-      </div>
+      </a>
 
-      <!-- TODO: restore as <a href="work/aeva-team.html"> once the case study page exists -->
-      <div class="work-card" data-reveal>
-        <img src="images/work-aeva-team.png" alt="AEVA Team project by Omiko" />
+      <a class="work-card" href="work/aeva-team.html" data-reveal>
+        <img src="images/work-aeva-team.png" alt="Orange exhibition poster of a sculpture on a city street, part of AEVA Team's brand identity" />
         <div class="work-card-scrim"></div>
         <div class="work-card-title">
           <span class="work-card-arrow">
@@ -182,11 +178,10 @@
           </span>
           <h3>AEVA Team</h3>
         </div>
-      </div>
+      </a>
 
-      <!-- TODO: restore as <a href="work/chr-innovations.html"> once the case study page exists -->
-      <div class="work-card" data-reveal>
-        <img src="images/work-chr-innovations.png" alt="CHR Innovations project by Omiko" />
+      <a class="work-card" href="work/chr-innovations.html" data-reveal>
+        <img src="images/work-chr-innovations.png" alt="Dark product package hanging in plastic wrap, branded with the CHR Innovations sunburst logo" />
         <div class="work-card-scrim"></div>
         <div class="work-card-title">
           <span class="work-card-arrow">
@@ -196,11 +191,10 @@
           </span>
           <h3>CHR Innovations</h3>
         </div>
-      </div>
+      </a>
 
-      <!-- TODO: restore as <a href="work/profit-saloon.html"> once the case study page exists -->
-      <div class="work-card" data-reveal>
-        <img src="images/work-profit-saloon.png" alt="Profit Saloon project by Omiko" />
+      <a class="work-card" href="work/profit-saloon.html" data-reveal>
+        <img src="images/work-profit-saloon.png" alt="Laptop floating on water displaying the Profit Saloon website homepage" />
         <div class="work-card-scrim"></div>
         <div class="work-card-title">
           <span class="work-card-arrow">
@@ -210,6 +204,37 @@
           </span>
           <h3>Profit Saloon</h3>
         </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-inner">
+      <h2 class="cta-heading">
+        <span class="cta-heading-line">Let's</span>
+        <span class="cta-heading-line">build yours</span>
+      </h2>
+
+      <p class="cta-reassurance">No long contracts, no jargon. Just the same care you just saw, applied to your business.</p>
+
+      <div class="cta-actions">
+        <a class="pill pill-dark" href="contact.html">
+          <span class="pill-label">Chat with Omiko</span>
+          <span class="pill-icon">
+            <svg viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 3.26215C1 2.33911 1.79594 1.59084 2.77778 1.59084L15.2222 1.59082C16.2041 1.59082 17 2.33909 17 3.26213V11.6485C17 12.5716 16.2041 13.3198 15.2222 13.3199L11.9989 13.3199C11.7918 13.3199 11.5912 13.3878 11.4318 13.512L8.9962 15.409L6.59291 13.5151C6.43287 13.389 6.23071 13.3199 6.02188 13.3199H2.77778C1.79594 13.3199 1 12.5716 1 11.6486L1 3.26215Z" stroke="currentColor" stroke-width="1.77778" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a class="pill pill-light" href="contact.html#start-project">
+          <span class="pill-label">Start a project</span>
+          <span class="pill-icon">
+            <svg viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.75 2.75H2.75C1.64543 2.75 0.75 3.64543 0.75 4.75V7.25M4.75 2.75H13.25M4.75 2.75V0.75M13.25 2.75H15.25C16.3546 2.75 17.25 3.64543 17.25 4.75V7.25M13.25 2.75V0.75M8.25 18.25H2.75C1.64543 18.25 0.75 17.3546 0.75 16.25V7.25M0.75 7.25H17.25M17.25 7.25V9.25M14.75 12.75V16M14.75 16V19.25M14.75 16H11.5M14.75 16H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>
