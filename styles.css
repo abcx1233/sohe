@@ -580,6 +580,7 @@ button {
   .work-card-title {
     left: 2rem;
     bottom: 2rem;
+    gap: 1rem;
   }
 
   .work-card-arrow {
