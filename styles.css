@@ -880,6 +880,7 @@ button {
 
 .cta-heading {
   margin: 0;
+  padding-left: 2.05rem;
   display: flex;
   flex-direction: column;
   font-family: var(--font-display);
@@ -889,6 +890,13 @@ button {
   letter-spacing: -0.05em;
   color: var(--color-black);
   user-select: none;
+}
+
+.cta-reassurance {
+  margin: 1.5rem 0 0;
+  padding-left: 2.05rem;
+  font-size: 1.5rem;
+  color: var(--color-grey);
 }
 
 .cta-actions {
