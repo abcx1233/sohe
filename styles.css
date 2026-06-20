@@ -1005,6 +1005,18 @@ button {
   color: var(--color-grey);
 }
 
+.footer-privacy-link {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: -0.025em;
+  color: var(--color-grey);
+  transition: color 0.2s ease-out;
+}
+
+.footer-privacy-link:hover {
+  color: var(--color-white);
+}
+
 .footer-socials {
   display: flex;
   align-items: center;
@@ -1114,6 +1126,11 @@ button {
 
   .footer-tagline {
     font-size: 2.25rem;
+  }
+
+  .footer-privacy-link {
+    margin-top: 1rem;
+    font-size: 1.125rem;
   }
 
   .footer-socials {
@@ -1458,5 +1475,55 @@ button {
 
 .cloud-tag-growth {
   background-color: #fc7cff;
+}
+
+/* ---------------------------------------------------
+   Privacy page
+--------------------------------------------------- */
+
+.legal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  margin-top: 8rem;
+  padding: 0 1rem 4rem;
+}
+
+.legal-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: var(--color-black);
+}
+
+.legal-section a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+@media (min-width: 768px) {
+  .legal-section {
+    padding: 0 2rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .legal-section {
+    gap: 3rem;
+    margin-top: 10rem;
+    padding: 0 3rem 8rem;
+  }
+
+  .legal-heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .legal-section {
+    padding: 0 5rem 8rem;
+  }
 }
 
