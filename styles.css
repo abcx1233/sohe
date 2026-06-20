@@ -807,21 +807,9 @@ button {
 
 .pricing-list {
   margin-top: 4rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.pricing-list::-webkit-scrollbar {
-  display: none;
-}
-
-.pricing-list .service-card {
-  flex: 0 0 85vw;
-  scroll-snap-align: center;
 }
 
 @media (min-width: 768px) {
@@ -836,15 +824,7 @@ button {
   }
 
   .pricing-list {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    overflow-x: visible;
-    scroll-snap-type: none;
-  }
-
-  .pricing-list .service-card {
-    flex: initial;
-    scroll-snap-align: none;
   }
 
   .pricing-list .service-title {
