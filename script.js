@@ -211,4 +211,23 @@
 
     window.addEventListener('scroll', updateScrollIndicators);
   }
+
+  var brandLogos = document.querySelectorAll('.brand-logo');
+
+  if (brandLogos.length) {
+    var updateBrandLogos = function () {
+      var hidden = window.scrollY > 50;
+      brandLogos.forEach(function (el) {
+        el.classList.toggle('header-logo--hidden', hidden);
+      });
+    };
+
+    if (prefersReducedMotion) {
+      brandLogos.forEach(function (el) {
+        el.style.transition = 'none';
+      });
+    }
+
+    window.addEventListener('scroll', updateBrandLogos);
+  }
 })();
