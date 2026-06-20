@@ -280,6 +280,7 @@ button {
   .site-menu {
     top: 7rem;
     right: 3rem;
+    min-width: 18rem;
   }
 
   .site-menu-link {
