@@ -66,24 +66,30 @@
   });
 
   var bookMeetingBtn = document.getElementById('book-meeting-btn');
-  var ctaSection = document.querySelector('.cta');
-  if (bookMeetingBtn && ctaSection) {
-    bookMeetingBtn.addEventListener('click', function () {
-      ctaSection.scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-
   var startProjectBtn = document.getElementById('start-project-btn');
   var startProjectForm = document.getElementById('start-project-form');
-  if (startProjectBtn && startProjectForm) {
-    startProjectBtn.addEventListener('click', function () {
+
+  if (startProjectForm) {
+    var revealStartProjectForm = function () {
       startProjectForm.classList.add('is-visible');
       startProjectForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       var firstField = startProjectForm.querySelector('input[name="name"]');
       if (firstField) {
         firstField.focus();
       }
-    });
+    };
+
+    if (startProjectBtn) {
+      startProjectBtn.addEventListener('click', revealStartProjectForm);
+    }
+
+    if (bookMeetingBtn) {
+      bookMeetingBtn.addEventListener('click', revealStartProjectForm);
+    }
+
+    if (window.location.hash === '#start-project') {
+      revealStartProjectForm();
+    }
 
     startProjectForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -117,6 +123,12 @@
           errorMsg.textContent = 'Something went wrong — please try again.';
           errorMsg.hidden = false;
         });
+    });
+  }
+
+  if (bookMeetingBtn && !startProjectForm) {
+    bookMeetingBtn.addEventListener('click', function () {
+      window.location.href = 'contact.html#start-project';
     });
   }
 

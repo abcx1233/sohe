@@ -1,5 +1,5 @@
 /* ---------------------------------------------------
-   SOHub homepage rebuild — design tokens
+   Omiko homepage — design tokens
 --------------------------------------------------- */
 
 @font-face {
@@ -14,7 +14,7 @@
   --wordmark-offset: calc(77vw - (90vw * 5812 / 6434));
   --work-wordmark-offset: calc(77vw - (90vw * 8161 / 8783));
   --studio-wordmark-offset: calc(77vw - (90vw * 5999 / 6621));
-  --contact-wordmark-offset: calc(77vw - (90vw * 5812 / 6434));
+  --contact-wordmark-offset: var(--wordmark-offset);
 
   /* colors */
   --color-white: #f0f6f8;
@@ -26,9 +26,6 @@
   /* type */
   --font-body: "Inter", system-ui, sans-serif;
   --font-display: "Inter", system-ui, sans-serif;
-
-  /* spacing unit */
-  --space: 0.25rem;
 }
 
 * {
@@ -805,7 +802,7 @@ button {
 .pricing {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  padding: 0 1rem 4rem;
 }
 
 .pricing-list {
@@ -817,13 +814,13 @@ button {
 
 @media (min-width: 768px) {
   .pricing {
-    padding: 0 2rem;
+    padding: 0 2rem 4rem;
   }
 }
 
 @media (min-width: 1024px) {
   .pricing {
-    padding: 0 3rem;
+    padding: 0 3rem 8rem;
   }
 
   .pricing-list {
@@ -837,7 +834,7 @@ button {
 
 @media (min-width: 1280px) {
   .pricing {
-    padding: 0 5rem;
+    padding: 0 5rem 8rem;
   }
 }
 
@@ -1174,10 +1171,6 @@ button {
    Contact page
 --------------------------------------------------- */
 
-.contact-hero-copy {
-  right: -13%;
-}
-
 .contact-hero-tagline {
   font-size: 1.25rem;
 }
@@ -1335,10 +1328,6 @@ button {
    Work page
 --------------------------------------------------- */
 
-.work-hero-copy {
-  right: -13%;
-}
-
 .work-hero-tagline {
   letter-spacing: -0.075em;
 }
@@ -1370,10 +1359,6 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .work-hero-copy {
-    right: -13%;
-  }
-
   .view-toggle {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1401,19 +1386,9 @@ button {
    Studio page
 --------------------------------------------------- */
 
-.studio-hero-copy {
-  right: -13%;
-}
-
 .studio-hero-tagline {
   font-size: 1.25rem;
   letter-spacing: -0.075em;
-}
-
-@media (min-width: 1024px) {
-  .studio-hero-tagline {
-    font-size: 3.5rem;
-  }
 }
 
 .studio-team,
