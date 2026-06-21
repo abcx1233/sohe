@@ -1027,7 +1027,10 @@ button {
 }
 
 .footer-wordmark[data-reveal].is-visible {
-  transform: translateY(0);
+  /* Lift by the same amount .footer-panel pulls up via its negative
+     margin-top, so the wordmark clears the panel instead of resting
+     at the baseline position the panel already overlaps. */
+  transform: translateY(clamp(-6rem, -12%, -2rem));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1043,6 +1046,10 @@ button {
 @media (min-width: 1024px) {
   .footer-wordmark {
     font-size: 9rem;
+  }
+
+  .footer-wordmark[data-reveal].is-visible {
+    transform: translateY(clamp(-12rem, -20%, -6rem));
   }
 }
 
