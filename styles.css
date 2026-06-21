@@ -161,7 +161,7 @@ button {
 }
 
 .brand-logo--offscreen {
-  transform: translateY(-150%);
+  transform: translateY(calc(-100% - 6rem));
 }
 
 .header-actions {
