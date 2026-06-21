@@ -78,6 +78,14 @@ button {
   transform: translateY(0);
 }
 
+.service-card[data-reveal] {
+  transform: translateY(20px) scale(0.95);
+}
+
+.service-card[data-reveal].is-visible {
+  transform: translateY(0) scale(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     transition: none;
