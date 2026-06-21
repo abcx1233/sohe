@@ -397,6 +397,10 @@ button {
     visibility: hidden;
     pointer-events: none;
   }
+
+  .scroll-indicator {
+    opacity: 0.25;
+  }
 }
 
 @media (min-width: 640px) {
