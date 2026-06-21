@@ -216,7 +216,7 @@
 
   if (brandLogos.length) {
     var updateBrandLogos = function () {
-      var hidden = window.scrollY > 50;
+      var hidden = window.scrollY > 160;
       brandLogos.forEach(function (el) {
         el.classList.toggle('header-logo--hidden', hidden);
       });
