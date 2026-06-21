@@ -929,17 +929,11 @@ button {
 
 @media (min-width: 1024px) {
   .cta {
-    height: 100vh;
-    padding-top: 8rem;
-    margin-bottom: -6rem;
+    padding: 0;
   }
 
   .cta-inner {
-    position: absolute;
-    top: 50%;
-    left: 3rem;
-    padding-left: 0;
-    transform: translateY(-50%);
+    padding-left: 3rem;
   }
 
   .cta-heading {
@@ -955,7 +949,7 @@ button {
 
 @media (min-width: 1280px) {
   .cta-inner {
-    left: 5rem;
+    padding-left: 5rem;
   }
 
   .cta-heading {
