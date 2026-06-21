@@ -230,4 +230,21 @@
 
     window.addEventListener('scroll', updateBrandLogos);
   }
+
+  var workHeadline = document.querySelector('.work .section-headline');
+  var headerLogo = document.querySelector('.brand-logo');
+
+  if (workHeadline && headerLogo) {
+    if (prefersReducedMotion) {
+      headerLogo.style.transition = 'none';
+    }
+
+    var logoSlideObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        headerLogo.classList.toggle('brand-logo--offscreen', entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+
+    logoSlideObserver.observe(workHeadline);
+  }
 })();

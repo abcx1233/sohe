@@ -157,6 +157,11 @@ button {
   font-size: 1.5rem;
   letter-spacing: -0.02em;
   white-space: nowrap;
+  transition: transform 0.4s ease-in;
+}
+
+.brand-logo--offscreen {
+  transform: translateY(-150%);
 }
 
 .header-actions {
@@ -384,7 +389,7 @@ button {
 
 @media (max-width: 1023.98px) {
   .brand-logo {
-    transition: opacity 1.2s ease, visibility 1.2s ease;
+    transition: opacity 1.2s ease, visibility 1.2s ease, transform 0.4s ease-in;
   }
 
   .header-logo--hidden {
