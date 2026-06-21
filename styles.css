@@ -1027,10 +1027,9 @@ button {
 }
 
 .footer-wordmark[data-reveal].is-visible {
-  /* Lift by the same amount .footer-panel pulls up via its negative
-     margin-top, so the wordmark clears the panel instead of resting
-     at the baseline position the panel already overlaps. */
-  transform: translateY(clamp(-6rem, -12%, -2rem));
+  /* Halfway between the fully-overlapped baseline (0) and a full lift
+     clear of .footer-panel's negative margin-top. */
+  transform: translateY(calc(clamp(-6rem, -12%, -2rem) / 2));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1049,7 +1048,7 @@ button {
   }
 
   .footer-wordmark[data-reveal].is-visible {
-    transform: translateY(clamp(-12rem, -20%, -6rem));
+    transform: translateY(calc(clamp(-12rem, -20%, -6rem) / 2));
   }
 }
 
