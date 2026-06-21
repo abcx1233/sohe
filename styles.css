@@ -936,8 +936,10 @@ button {
 
   .cta-inner {
     position: absolute;
+    top: 50%;
     left: 3rem;
     padding-left: 0;
+    transform: translateY(-50%);
   }
 
   .cta-heading {
