@@ -919,7 +919,8 @@ button {
 
 .cta-actions {
   position: relative;
-  margin-top: 25%;
+  margin-top: 1.5rem;
+  padding-left: 2.05rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
