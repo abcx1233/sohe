@@ -195,6 +195,7 @@ button {
   font-size: 0.875rem;
   font-weight: 500;
   text-transform: uppercase;
+  white-space: nowrap;
   padding: 0 1rem 0 1.75rem;
 }
 
@@ -542,6 +543,7 @@ button {
   aspect-ratio: 16 / 9;
   border-radius: 1rem;
   overflow: hidden;
+  background: var(--color-black);
   transition: transform 0.3s cubic-bezier(0.22, 0.68, 0, 1.5);
 }
 
@@ -573,6 +575,7 @@ button {
   z-index: 2;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   overflow: hidden;
   width: 100%;
 }
@@ -586,7 +589,11 @@ button {
 }
 
 .work-card-arrow {
-  display: none;
+  display: flex;
+  align-items: center;
+  width: 1.5rem;
+  flex-shrink: 0;
+  color: var(--color-white);
 }
 
 @media (min-width: 768px) {
@@ -1101,6 +1108,7 @@ button {
   background: var(--color-dark-grey);
   border-radius: 0 0 1.5rem 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -1112,12 +1120,14 @@ button {
 
 .footer-extension-right {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 .footer-go-up {
-  display: none;
+  display: flex;
 }
 
 .footer-go-up .pill-icon {
