@@ -212,42 +212,36 @@
     window.addEventListener('scroll', updateScrollIndicators);
   }
 
-  var brandLogos = document.querySelectorAll('.brand-logo');
-
-  if (brandLogos.length) {
-    var updateBrandLogos = function () {
-      var hidden = window.scrollY > 160;
-      brandLogos.forEach(function (el) {
-        el.classList.toggle('header-logo--hidden', hidden);
-      });
-    };
-
-    if (prefersReducedMotion) {
-      brandLogos.forEach(function (el) {
-        el.style.transition = 'none';
-      });
-    }
-
-    window.addEventListener('scroll', updateBrandLogos);
-  }
-
   var workHeadline = document.querySelector('.work .section-headline');
   var headerLogo = document.querySelector('.brand-logo');
 
-  if (workHeadline && headerLogo) {
+  if (headerLogo && workHeadline) {
     if (prefersReducedMotion) {
       headerLogo.style.transition = 'none';
     }
+
+    var isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+    // Below 1024px the Work headline often sits within the initial
+    // viewport (short hero + tall phone screen), so a plain "any part
+    // visible" check would hide the logo before the user scrolls at
+    // all. Shrinking the observed area to the top of the viewport
+    // means it only fires once the headline has scrolled close to it.
+    var observerOptions = isDesktop
+      ? { threshold: 0 }
+      : { threshold: 0, rootMargin: '0px 0px -70% 0px' };
 
     var logoSlideObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           headerLogo.classList.add('brand-logo--offscreen');
+          headerLogo.classList.add('header-logo--hidden');
         } else if (entry.boundingClientRect.top > 0) {
           headerLogo.classList.remove('brand-logo--offscreen');
+          headerLogo.classList.remove('header-logo--hidden');
         }
       });
-    }, { threshold: 0 });
+    }, observerOptions);
 
     logoSlideObserver.observe(workHeadline);
   }
