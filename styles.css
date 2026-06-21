@@ -399,7 +399,7 @@ button {
   }
 
   .scroll-indicator {
-    opacity: 0.25;
+    display: none;
   }
 }
 
