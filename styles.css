@@ -994,7 +994,7 @@ button {
 
 .footer-panel {
   width: 100%;
-  margin-top: -12%;
+  margin-top: clamp(-6rem, -12%, -2rem);
   aspect-ratio: 2.3 / 1;
   background: var(--color-black);
   border-radius: 1.5rem;
@@ -1129,7 +1129,7 @@ button {
   }
 
   .footer-panel {
-    margin-top: -20%;
+    margin-top: clamp(-12rem, -20%, -6rem);
     padding-bottom: 3rem;
   }
 
