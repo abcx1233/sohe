@@ -241,7 +241,11 @@
 
     var logoSlideObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        headerLogo.classList.toggle('brand-logo--offscreen', entry.isIntersecting);
+        if (entry.isIntersecting) {
+          headerLogo.classList.add('brand-logo--offscreen');
+        } else if (entry.boundingClientRect.top > 0) {
+          headerLogo.classList.remove('brand-logo--offscreen');
+        }
       });
     }, { threshold: 0 });
 
